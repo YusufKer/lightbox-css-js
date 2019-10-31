@@ -1,0 +1,46 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+/*This is simply arranging the images into a grid*/
+.lightbox-grid{
+	display:grid;
+	grid-template-columns: repeat(3, 200px);
+	justify-content: center;
+	align-content: center;
+	grid-gap: 5px;
+	height: 100vh;
+}
+
+.lightbox-grid img{
+	width:200px;
+	height:200px;
+	cursor:pointer;
+}
+/*
+This will ensure that the lightbox takes up all of the diplay
+and also shows on the screen regardless of whether the user scrolls away or not
+i.e. position:fixed;
+*/
+#lightbox {
+	display:none;
+	position:fixed;
+	z-index:1000;
+	top:0;
+	width: 100%;
+	height:100%;
+	background-color: rgba(0,0,0, .8);
+}
+/*These styles will apply once the lightbox has a class of active*/
+#lightbox.active{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000vh;
+}
+
+/*This will ensure that the image never takes up the full space of the browser*/
+#lightbox img{
+	max-width:90%;
+	max-height:90%;
+}
